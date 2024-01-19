@@ -36,6 +36,7 @@ input {
     text-align: center;
     font-family: 'Rubik' sans-serif;
     margin: 10px 0 0;
+    font-family: 'Rubik' sans-serif;
 
 }
 
@@ -72,6 +73,7 @@ ul {
 li {
   list-style: none; 
   padding-right:25px;
+  font-family: 'Rubik' sans-serif;
   
 }
 span {
@@ -101,7 +103,10 @@ margin: 10px 0 0;
 padding: 0;
 margin-right: 5px; 
 color :#808080;
- 
+ font-family: 'Rubik' sans-serif;
 }
 
 
+b{
+  font-family: 'Rubik' sans-serif;
+}
