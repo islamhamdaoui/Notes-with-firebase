@@ -14,14 +14,14 @@ let button = document.getElementById("btn")
 let list = document.getElementById("list")
 
 let usernameInput = document.getElementById("username");
-let verified = document.getElementById("verified");
+let user = document.getElementById('user')
 
 
 
 
+// ...
 
 button.addEventListener("click", function() {
- 
   let inputValue = input.value.trim();
   let usernameValue = usernameInput.value.trim();
   if (inputValue !== "" && usernameValue !== "") {
@@ -32,35 +32,35 @@ button.addEventListener("click", function() {
       hour: "numeric",
       minute: "numeric"
     });
-    push(noteInsert, { note: inputValue, date: currentDate, username: usernameValue });
+    push(noteInsert, { note: inputValue, date: currentDate, username: usernameValue, visibility: false });
     input.value = "";
-    
+
     localStorage.setItem('savedUsername', usernameValue);
   }
-   
 });
+
 onValue(noteInsert, function(snapshot) {
   if (snapshot.exists()) {
     let notes = Object.values(snapshot.val());
     list.innerHTML = "";
 
     for (let i = 0; i < notes.length; i++) {
-      const { note, date, username} = notes[i];
-        list.innerHTML += `<div class="note"><div class="user"><b Id="user">${username}</b><img Id="verified" class="verified" src="verified.png"></div><li>${note}</li><p>${date}</p></div>`;
-        
-        
-        
-    } 
+      const { note, date, username, visibility } = notes[i];
+      list.innerHTML += `<div class="note"><div class="user"><b Id="user">${username}</b><img Id="verified-${i}" class="verified" src="verified.png"></div><li>${note}</li><p>${date}</p></div>`;
 
+      const verifiedImage = document.getElementById(`verified-${i}`);
+      if (verifiedImage) {
+        verifiedImage.style.visibility = visibility ? 'visible' : 'hidden';
+      }
+    } 
   } else {
     list.innerHTML = "No notes yet";
   }
 });
 
-
-window.onload = function() {
+window.onload = function () {
   var savedUsername = localStorage.getItem('savedUsername');
   if (savedUsername !== null) {
-      usernameInput.value = savedUsername;
+    usernameInput.value = savedUsername;
   }
 };

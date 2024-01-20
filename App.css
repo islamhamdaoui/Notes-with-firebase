@@ -123,9 +123,9 @@ b{
 }
 
 .verified {
-  height: 15px; 
-  width: 15px; 
- display: none;
+  height: 13px; 
+  width: 13px; 
+ visibility: hidden;
   margin-left: 3px; 
 }
 
