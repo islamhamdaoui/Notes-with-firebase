@@ -127,6 +127,7 @@ b{
   width: 13px; 
  visibility: hidden;
   margin-left: 3px; 
+     pointer-events: none;
 }
 
 
