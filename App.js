@@ -15,12 +15,17 @@ let list = document.getElementById("list")
 let error = document.getElementById("error")
 
 let usernameInput = document.getElementById("username");
-
+let verified = document.getElementById("verified");
+let user = document.getElementById("user")
+let addBtn = document.getElementById("addBtn")
+let isLiked = false;
+let inputEnabled = false;
 
 
 
 
 button.addEventListener("click", function() {
+ 
   let inputValue = input.value.trim();
   let usernameValue = usernameInput.value.trim();
   if (inputValue !== "" && usernameValue !== "") {
@@ -33,8 +38,10 @@ button.addEventListener("click", function() {
     });
     push(noteInsert, { note: inputValue, date: currentDate, username: usernameValue });
     input.value = "";
-    usernameInput.value = "";
+    
+      
   }
+   
 });
 onValue(noteInsert, function(snapshot) {
   if (snapshot.exists()) {
@@ -42,8 +49,11 @@ onValue(noteInsert, function(snapshot) {
     list.innerHTML = "";
 
     for (let i = 0; i < notes.length; i++) {
-      const { note, date, username } = notes[i];
-        list.innerHTML += `<div class="note"><b>${username}</b><li>${note}</li><p>${date}</p></div>`;
+      const { note, date, username} = notes[i];
+        list.innerHTML += `<div class="note"><div class="user"><b Id="user">${username}</b><img Id="verified" class="verified" src="verified.png"></div><li>${note}</li><p>${date}</p></div>`;
+        
+        
+        
     } 
 
   } else {
@@ -51,3 +61,28 @@ onValue(noteInsert, function(snapshot) {
   }
 });
 
+
+
+
+ addBtn.addEventListener('click', toggleLike);
+
+  function toggleLike() {
+    const addImg = document.getElementById('addImg');
+
+    if (isLiked,inputEnabled) {
+      
+      addImg.src = 'add.png';
+      usernameInput.style.pointerEvents = "auto";
+      usernameInput.style.opacity="1"
+    } else {
+      
+      addImg.src = 'edit.png';
+      usernameInput.style.opacity="0.5"
+      usernameInput.style.pointerEvents = "none";
+    }
+
+    isLiked = !isLiked;
+    inputEnabled = !inputEnabled;
+     
+
+}

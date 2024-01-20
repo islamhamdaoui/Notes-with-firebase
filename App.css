@@ -1,11 +1,11 @@
-html{
- 
-}
+
 body {
     padding: 0;
     margin: 0;
     font-family: 'Rubik' sans-serif;
     background-color:#eef0f4 ;
+    display: flex;
+    justify-content: center;
     
 
 }
@@ -30,7 +30,8 @@ input {
    
     font-size: 20px;
     padding: 15px ;
-  
+    
+   
     box-sizing: border-box;
     border-radius: 8px;
     text-align: center;
@@ -72,6 +73,7 @@ ul {
 }
 li {
   list-style: none; 
+  padding-top: 5px; 
   padding-right:25px;
   font-family: 'Rubik' sans-serif;
   
@@ -108,5 +110,54 @@ color :#808080;
 
 
 b{
-  font-family: 'Rubik' sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  
+  
+}
+
+.user{
+  display: Flex; 
+  width: fit-content; 
+  
+  align-items: center; 
+}
+
+.verified {
+  height: 15px; 
+  width: 15px; 
+ display: none;
+  margin-left: 3px; 
+}
+
+ .addUser{
+   display: Flex; 
+   gap:5px; 
+ }
+ 
+ .addUser input {
+   width:80% ;
+ }
+ 
+
+ 
+ .add{
+   background:#ac485a ;
+   padding: 10px;
+   display: flex; 
+  align-items: center; 
+   justify-content: center;
+   border-radius: 8px;
+   width: 11%;
+ }
+ 
+ .add img {
+   height: 22px; 
+   width: 22px; 
+ }
+
+ /* Styles for screens 700px or more */
+@media screen and (min-width: 900px) {
+  .container {
+    width: 60%;
+  }
 }
