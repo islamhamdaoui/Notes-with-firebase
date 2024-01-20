@@ -52,7 +52,7 @@ onValue(noteInsert, function(snapshot) {
 
       const verifiedImage = document.getElementById(`verified-${i}`);
       if (verifiedImage) {
-        verifiedImage.style.visibility = checkSpecialUser(username) ? 'visible' : 'hidden';      }
+        verifiedImage.style.visibility = checkSpecialUser(username) ? 'visible': 'hidden';      }
     } 
   } else {
     list.innerHTML = "No notes yet";
@@ -68,6 +68,6 @@ window.onload = function () {
 
 
 function checkSpecialUser(username) {
-  const specialUsernames = ["ISLAM HAMDAOUI", "SOUSSI", "SOUSSY"];
+  const specialUsernames = ["ISLAM HAMDAOUI", "SOUSSI", "SOUSSY","Zaidi Mohamed"];
   return specialUsernames.includes(username.toUpperCase());
 }
