@@ -129,31 +129,7 @@ b{
   margin-left: 3px; 
 }
 
- .addUser{
-   display: Flex; 
-   gap:5px; 
- }
- 
- .addUser input {
-   width:80% ;
- }
- 
 
- 
- .add{
-   background:#ac485a ;
-   padding: 10px;
-   display: flex; 
-  align-items: center; 
-   justify-content: center;
-   border-radius: 8px;
-   width: 11%;
- }
- 
- .add img {
-   height: 22px; 
-   width: 22px; 
- }
 
  /* Styles for screens 700px or more */
 @media screen and (min-width: 900px) {

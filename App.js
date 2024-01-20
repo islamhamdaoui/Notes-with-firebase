@@ -62,27 +62,3 @@ onValue(noteInsert, function(snapshot) {
 });
 
 
-
-
- addBtn.addEventListener('click', toggleLike);
-
-  function toggleLike() {
-    const addImg = document.getElementById('addImg');
-
-    if (isLiked,inputEnabled) {
-      
-      addImg.src = 'add.png';
-      usernameInput.style.pointerEvents = "auto";
-      usernameInput.style.opacity="1"
-    } else {
-      
-      addImg.src = 'edit.png';
-      usernameInput.style.opacity="0.5"
-      usernameInput.style.pointerEvents = "none";
-    }
-
-    isLiked = !isLiked;
-    inputEnabled = !inputEnabled;
-     
-
-}
