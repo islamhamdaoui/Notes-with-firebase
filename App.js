@@ -68,6 +68,6 @@ window.onload = function () {
 
 
 function checkSpecialUser(username) {
-  const specialUsernames = ["ISLAM HAMDAOUI", "SOUSSI", "SOUSSY","Zaidi Mohamed"];
+  const specialUsernames = ["ISLAM HAMDAOUI", "SOUSSI", "SOUSSY","ZAIDI MOHAMED"];
   return specialUsernames.includes(username.toUpperCase());
 }
