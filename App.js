@@ -12,14 +12,10 @@ let noteInsert=  ref(database, "notes");
 let input =document.getElementById("input")
 let button = document.getElementById("btn")
 let list = document.getElementById("list")
-let error = document.getElementById("error")
 
 let usernameInput = document.getElementById("username");
 let verified = document.getElementById("verified");
-let user = document.getElementById("user")
-let addBtn = document.getElementById("addBtn")
-let isLiked = false;
-let inputEnabled = false;
+
 
 
 
@@ -39,7 +35,7 @@ button.addEventListener("click", function() {
     push(noteInsert, { note: inputValue, date: currentDate, username: usernameValue });
     input.value = "";
     
-      
+    localStorage.setItem('savedUsername', usernameValue);
   }
    
 });
@@ -62,3 +58,9 @@ onValue(noteInsert, function(snapshot) {
 });
 
 
+window.onload = function() {
+  var savedUsername = localStorage.getItem('savedUsername');
+  if (savedUsername !== null) {
+      usernameInput.value = savedUsername;
+  }
+};
