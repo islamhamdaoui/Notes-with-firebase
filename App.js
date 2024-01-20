@@ -32,6 +32,8 @@ button.addEventListener("click", function() {
       hour: "numeric",
       minute: "numeric"
     });
+
+    
     push(noteInsert, { note: inputValue, date: currentDate, username: usernameValue, visibility: false });
     input.value = "";
 
@@ -50,8 +52,7 @@ onValue(noteInsert, function(snapshot) {
 
       const verifiedImage = document.getElementById(`verified-${i}`);
       if (verifiedImage) {
-        verifiedImage.style.visibility = visibility ? 'visible' : 'hidden';
-      }
+        verifiedImage.style.visibility = checkSpecialUser(username) ? 'visible' : 'hidden';      }
     } 
   } else {
     list.innerHTML = "No notes yet";
@@ -64,3 +65,9 @@ window.onload = function () {
     usernameInput.value = savedUsername;
   }
 };
+
+
+function checkSpecialUser(username) {
+  const specialUsernames = ["ISLAM HAMDAOUI", "SOUSSI", "SOUSSY"];
+  return specialUsernames.includes(username.toUpperCase());
+}
